@@ -1,3 +1,6 @@
+
+import mainImg from "../assets/صورة واتساب بتاريخ 1446-06-20 في 12.16.21_13e750ae.jpg";
+
 const AboutSection = () => {
   return (
     <section
@@ -10,7 +13,7 @@ const AboutSection = () => {
           <div className="absolute w-64 h-64 md:w-80 md:h-80 rounded-full bg-lime-400 blur-3xl opacity-20"></div>
 
           <img
-            src="src\assets\صورة واتساب بتاريخ 1446-06-20 في 12.16.21_13e750ae.jpg" // حطها في public أو import
+            src={mainImg}
             alt="Ahmed"
             className="relative z-10 w-52 h-52 md:w-72 md:h-72 
                    object-cover rounded-full border-4 border-lime-400"
