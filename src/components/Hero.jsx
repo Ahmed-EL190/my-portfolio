@@ -1,4 +1,4 @@
-import mainImg from "../assets/صورة واتساب بتاريخ 1446-06-20 في 12.16.21_13e750ae.jpg";
+import mainImg from "../assets/mainImg.jpg";
 
 const Hero = () => {
   return (
