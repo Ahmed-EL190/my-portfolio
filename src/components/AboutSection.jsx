@@ -1,55 +1,107 @@
-
-import mainImg from "../assets/mainImg.jpg";
+import { motion } from "framer-motion";
+import profile from "../assets/profile.jpg";
 
 const AboutSection = () => {
   return (
     <section
       id="about"
-      className="relative bg-[#0b0f0e] text-white overflow-hidden py-24"
+      className="relative w-full bg-[#0b0f0e] text-white overflow-hidden"
     >
-      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+      {/* ===== Content Wrapper ===== */}
+      <div
+        className="
+          relative z-10
+          w-full
+          px-6
+          sm:px-10
+          md:px-20
+          lg:px-28
+          xl:px-36
+          py-28
+          grid
+          grid-cols-1
+          lg:grid-cols-2
+          gap-32
+          items-center
+        "
+      >
         {/* ===== Image ===== */}
-        <div className="relative flex justify-center">
-          <div className="absolute w-64 h-64 md:w-80 md:h-80 rounded-full bg-lime-400 blur-3xl opacity-20"></div>
+        <motion.div
+          initial={{ x: -100, opacity: 0, scale: 0.9 }}
+          whileInView={{ x: 0, opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="relative flex justify-center"
+        >
+          {/* Glow */}
+          <div className="absolute w-96 h-96 md:w-[450px] md:h-[450px] lg:w-[520px] lg:h-[520px] rounded-full bg-lime-400 blur-3xl opacity-20"></div>
 
+          {/* Image */}
           <img
-            src={mainImg}
+            src={profile}
             alt="Ahmed"
-            className="relative z-10 w-52 h-52 md:w-72 md:h-72 
-                   object-cover rounded-full border-4 border-lime-400"
+            className="
+              relative z-10
+              w-72 h-72
+              sm:w-80 sm:h-80
+              md:w-96 md:h-96
+              lg:w-[460px] lg:h-[460px]
+              xl:w-[520px] xl:h-[520px]
+              object-cover
+              rounded-full
+              border-4
+              border-lime-400
+            "
           />
-        </div>
+        </motion.div>
 
         {/* ===== Content ===== */}
-        <div className="text-center md:text-left">
-          <h1 className="text-white/85 text-2xl md:text-4xl font-extrabold">
+        <motion.div
+          initial={{ x: 100, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
+          className="text-center lg:text-left"
+        >
+          <h2 className="text-white/90 text-4xl md:text-5xl xl:text-6xl font-extrabold">
             About Me
-          </h1>
+          </h2>
 
-          <p className="text-lime-400 text-xl md:text-3xl font-extrabold mt-2">
+          <p className="text-lime-400 text-3xl md:text-4xl xl:text-5xl font-extrabold mt-3">
             Frontend Developer
           </p>
 
-          <p className="mt-6 text-white/75 max-w-xl mx-auto md:mx-0 text-sm md:text-base leading-relaxed">
+          <p
+            className="
+              mt-8
+              text-white/80
+              text-lg
+              md:text-xl
+              xl:text-2xl
+              leading-relaxed
+              max-w-3xl
+              mx-auto
+              lg:mx-0
+            "
+          >
             I’m a Fresh Frontend Developer specializing in building responsive
             and modern web applications using React.js, JavaScript (ES6+), HTML,
             CSS, and Tailwind CSS. I focus on writing clean, reusable code and
             creating user-friendly interfaces that look good and work smoothly
             on all devices. I have hands-on experience using React Hooks, React
-            Router, Context API, and API integration with Axios/Fetch.{" "}
-            <span>
-              {" "}
-              <button className="text-lime-400 text-sm hover:underline">
+            Router, Context API, and API integration with Axios/Fetch.
+            <span className="block mt-4">
+              <button className="text-lime-400 text-lg hover:underline">
                 See More
               </button>
             </span>
           </p>
-        </div>
+        </motion.div>
       </div>
 
-      {/* Divider */}
-      <div className="w-full flex justify-center mt-24">
-        <span className="w-48 md:w-96 h-px bg-lime-200"></span>
+      {/* ===== Divider ===== */}
+      <div className="w-full flex justify-center pb-24">
+        <span className="w-80 md:w-[520px] h-[1px] bg-lime-200/40"></span>
       </div>
     </section>
   );
