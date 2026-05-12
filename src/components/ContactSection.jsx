@@ -12,10 +12,10 @@ const ContactSection = () => {
 
     emailjs
       .sendForm(
-        "service_1fl2udp",
-        "template_tzq6gpo", 
+        "service_y51exzh",
+        "template_l9ize3n", 
         e.target,
-        "rALXX06pZzS1Onlzb"
+        "6_e96CMDs-TvFK1A0"
       )
       .then(() => {
         setSent(true);
